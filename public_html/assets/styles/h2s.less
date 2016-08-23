@@ -1,0 +1,209 @@
+#h2s-chart {
+    position: relative;
+    margin: 70px 90px;
+}
+.area {
+    display: inline-block;
+    position: relative;
+    width: 963px;
+    height: 795px;
+    margin-bottom: 50px;
+    padding-right: 70px;
+    overflow: hidden;
+}
+line {
+    position: absolute;
+    top: 0; left: 0;
+    background: black;
+}
+line:hover, line.active {
+    width: 3px;
+    background: red;
+    -webkit-box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75);
+    -moz-box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75);
+    box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75);
+}
+.x {
+    width: 100%;
+    height: 2px;
+}
+.x-1 { margin-top: 530px; }
+.x-2 { margin-top: 265px; }
+.x-3 { margin-top: 0px; }
+
+.xv-10 { top: 0px; }
+.xv-9 { top: 11px; }
+.xv-8 { top: 25px; }
+.xv-7 { top: 40px; }
+.xv-6 { top: 59px; }
+.xv-5 { top: 79px; }
+.xv-4 { top: 105px; }
+.xv-3 { top: 138px; }
+.xv-2 { top: 184px; }
+.xv-1 { top: 264px; }
+
+.y {
+    width: 2px;
+    height: 100%;
+}
+
+.y-2 { margin-left: 320px; }
+.y-3 { margin-left: 641px; }
+
+.yv-1 { left: 0px; }
+.yv-2 { left: 94px; }
+.yv-3 { left: 151px; }
+.yv-4 { left: 191px; }
+.yv-5 { left: 221px; }
+.yv-6 { left: 249px; }
+.yv-7 { left: 269px; }
+.yv-8 { left: 288px; }
+.yv-9 { left: 304px; }
+.yv-10 { left: 320px; }
+
+.red-line {
+    position: absolute;
+    width: 115%;
+    height: 2px;
+    background: red;
+    top: 510px;
+    left: 5px;
+    transform: rotate(136.9deg);
+}
+.yellow-line {
+    position: absolute;
+    width: 120%;
+    height: 2px;
+    background: yellow;
+    top: 450px;
+    left: -50px;
+    transform: rotate(142.8deg);
+}
+.green-line {
+    position: absolute;
+    width: 118%;
+    height: 2px;
+    background: green;
+    top: 411px;
+    left: -85px;
+    transform: rotate(148deg);
+}
+.blue-line {
+    position: absolute;
+    width: 115%;
+    height: 2px;
+    background: blue;
+    top: 350px;
+    left: -62px;
+    transform: rotate(152.5deg);
+}
+
+.legend {
+    position: absolute;
+    top: 150px; left: 150px;
+    padding: 20px;
+    background-color: white;
+}
+.line-legend {
+    display: inline-block;
+    vertical-align: middle;
+    width: 50px;
+    height: 2px;
+}
+.red-line-legend {background: red;}
+.yellow-line-legend {background: yellow;}
+.green-line-legend {background: green;}
+.blue-line-legend {background: blue;}
+
+.molfraction {
+    width: 963px;
+    text-align: center;
+}
+
+.molfraction > * {
+    display: inline-block;
+    vertical-align: middle;
+}
+.molfraction input {
+    text-align: center;
+    width: 50px;
+    font-size: 22px;
+    line-height: 24px;
+}
+
+.labels {
+    position: absolute;
+    top: -183px;
+    width: 100%;
+    height: 100%;
+    left: -77px;
+}
+
+.value-label, .column-label, .molfraction-label {
+    font-size: 22px;
+}
+
+.column-label {
+    transform: rotate(270deg);
+    display: block;
+    position: absolute;
+    top: 60%;
+    left: -26px;
+}
+
+.molfraction-label {
+
+}
+
+.value-label {
+    position: absolute;
+
+    &.label-10000 {
+        top: 166px;
+        left: 10px;
+    }
+
+    &.label-1000 {
+        top: 429px;
+        left: 10px;
+    }
+
+    &.label-100 {
+        top: 696px;
+        left: 10px;
+    }
+
+    &.label-10 {
+        top: 960px;
+        left: 10px;
+    }
+
+    &.label-001 {
+        top: 985px;
+        left: 60px;
+    }
+
+    &.label-01 {
+        top: 985px;
+        left: 388px;
+    }
+
+    &.label-1 {
+        top: 985px;
+        left: 716px;
+    }
+
+    &.label-10 {
+        top: 985px;
+        left: 1030px;
+    }
+}
+
+.result, .result-label {
+    margin-top: 15px;
+    font-size: 32px;
+}
+
+.result-label {
+    margin-right: 5px;
+}

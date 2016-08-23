@@ -1,0 +1,116 @@
+<section class="content-header">
+    <h1>Gas<small>Lines Model (Public)</small></h1>
+    <ol class="breadcrumb">
+        <li><a href="#">Feed Spacing Considerations</a></li>
+        <li><a href="#">Risk to Public Personnel</a></li>
+        <li class="active">Gas Lines Model</li>
+    </ol>
+</section>
+
+<section class="content" public-gas-lines-model>
+    <form class="row">
+
+        <div class="col-md-6">
+            <div class="box box-primary">
+                <div class="box-header with-border">
+                    <h3 class="box-title">Flowline Details</h3>
+                </div>
+
+                <div class="box-body">
+                    <div class="form-group">
+                        <label>Name</label>
+                        <input type="text" name="data-1" class="form-control" value="Test for Gas Lines">
+                    </div>
+                    <div class="form-group">
+                        <label>Pipe Diameter</label>
+                        <input type="text" name="data-2" class="form-control" value="400">
+                        <span class="unit">mm</span>
+                    </div>
+                    <div class="form-group">
+                        <label>Operating pressure</label>
+                        <input type="text" name="data-3" class="form-control" value="120">
+                        <span class="unit">Bar</span>
+                    </div>
+                    <div class="form-group">
+                        <label>Wall thickness</label>
+                        <input type="text" name="data-4" class="form-control" value="15">
+                        <span class="unit">mm</span>
+                    </div>
+                    <div class="form-group">
+                        <label>Material</label>
+                        <input type="text" name="data-11" class="form-control" value="X42">
+                    </div>
+                    <div class="form-group">
+                        <label>Length</label>
+                        <input type="text" name="data-5" class="form-control" value="10700">
+                        <span class="unit">m</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-6">
+            <div class="box box-primary">
+                <div class="box-header with-border">
+                    <h3 class="box-title">Additional Details</h3>
+                </div>
+
+                <div class="box-body">
+                    <div class="form-group">
+                        <label>Mole weight gas</label>
+                        <input type="text" name="data-6" class="form-control" value="19.13">
+                        <span class="unit">kg/kmol</span>
+                    </div>
+                    <div class="form-group">
+                        <label>Reaction time</label>
+                        <input type="text" name="data-9" class="form-control" value="2">
+                        <span class="unit">s</span>
+                    </div>
+                    <div class="form-group">
+                        <label>Temperature gas</label>
+                        <input type="text" name="data-7" class="form-control" value="53">
+                        <span class="unit">°C</span>
+                    </div>
+                    <div class="form-group">
+                        <label>Escape velocity</label>
+                        <input type="text" name="data-10" class="form-control" value="2">
+                        <span class="unit">m/s</span>
+                    </div>
+                    <div class="form-group">
+                        <label>Heat of Combustion</label>
+                        <input type="text" name="data-8" class="form-control" value="50400">
+                        <span class="unit">kJ/kg</span>
+                    </div>
+                    <br>
+                    <div class="form-group">
+                        <button class="btn btn-primary" ng-click="doCalculation()">Run the model</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </form>
+</section>
+
+<!-- Modal -->
+<div id="myModal" class="modal fade" data-backdrop="false" role="dialog">
+    <div class="modal-dialog">
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">Result for: Gas Lines Model</h4>
+            </div>
+            <div class="modal-body">
+                <h3 ng-show="!excelLoaded" class="loading">Working...</h3>
+                <h4 style="color:green;" ng-show="excelLoaded">Succeed</h4>
+                <span ng-show="excelLoaded">Check your Desktop for "{{ name }}" file</span>
+                <br>
+                <a href="#/feed-spacing/determination-distances/risk-public/flowlines-model" ng-show="excelLoaded">Run Well Flowlines Model</a>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,82 @@
+<section class="content-header">
+    <h1>Flammable Flowlines, Gathering & Pipeline System Distances</h1>
+    <ol class="breadcrumb">
+        <li><a href="#">Concept Stage Spacing Considerations</a></li>
+        <li class="active">Flowlines</li>
+    </ol>
+</section>
+
+<section class="content" flowlines>
+
+    <div class="row">
+        <div class="col-md-12">
+            <p><i style="color: red">Refer to the Guidelines, Section 5.3.1.2</i></p>
+        </div>
+        <div class="col-md-6">
+            <div class="box box-primary">
+                <div class="box-header with-border">
+                    <h3 class="box-title">Pipeline diameter (mm)</h3>
+                </div>
+
+                <div class="box-body">
+                    <input type="text" name="pipelineDiameter" class="form-control input-lg" />
+                </div>
+
+                <div class="box-footer"></div>
+            </div>
+            <div class="box box-primary">
+                <div class="box-header with-border">
+                    <h3 class="box-title">Operating pressure (Barg)</h3>
+                </div>
+
+                <div class="box-body">
+                    <input type="text" name="operatingPresure" class="form-control input-lg" />
+                </div>
+
+                <div class="box-footer"></div>
+            </div>
+        </div>
+
+        <div class="col-md-6">
+            <div class="box box-primary">
+                <div class="box-header with-border">
+                    <h3 class="box-title">Pipeline contents</h3>
+                </div>
+
+                <div class="box-body">
+                    <div class="form-group">
+                        <label>
+                            <input type="radio" name="flowType" value="0.6">NG<br>
+                        </label>
+                        <br/>
+                        <label>
+                            <input type="radio" name="flowType" value="1">Well Fluids / LPG<br>
+                        </label>
+                        <br/>
+                        <label>
+                            <input type="radio" name="flowType" value="1.25">NGL
+                        </label>
+                    </div>
+                </div>
+
+
+                <div class="box-footer">
+                    <button type="submit" class="btn btn-primary">Calculate</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-12">
+            <div class="info-box">
+                <span class="info-box-icon bg-blue"><i class="glyphicon glyphicon-info-sign"></i></span>
+
+                <div class="info-box-content">
+                    <h4>Calculated Minimum Separation Distance Required (m)</h4>
+                    <span id="result" class="info-box-number"></span>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

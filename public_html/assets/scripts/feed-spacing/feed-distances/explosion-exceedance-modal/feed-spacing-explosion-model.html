@@ -1,0 +1,155 @@
+<section class="content-header">
+    <h1>Explosion<small>Exceedance Model</small></h1>
+    <ol class="breadcrumb">
+        <li><a href="#">Feed Spacing Considerations</a></li>
+        <li class="active">Run Explosion Exceedance Model</li>
+    </ol>
+</section>
+
+<section class="content exceedence-model" explosion-model>
+
+    <div class="row">
+        <div class="col-md-7 col-sm-12">
+            <div class="box box-primary">
+                <div class="box-header with-border">
+                    <h3 class="box-title">Process Unit Data For CAM Model</h3>
+                </div>
+
+                <div class="box-body">
+                    <table class="cam-setup" border="0">
+                        <tr>
+                            <th>Area Code / Name</th>
+                            <th>Length (m)</th>
+                            <th>Width (m)</th>
+                            <th>Height (m)</th>
+                            <th>Fuel</th>
+                            <th>Congestion <a style="cursor: pointer; font-size:14px; color: red;" data-toggle="modal" data-target="#helpModal">?</a></th>
+                            <th>Frequency (/yr)</th>
+                        </tr>
+                        <tr class="input-fields">
+                            <td><input type="text" name="" /></td>
+                            <td><input type="text" name="" /></td>
+                            <td><input type="text" name="" /></td>
+                            <td><input type="text" name="" /></td>
+                            <td>
+                                <select style="min-width: 70px">
+                                    <option>C1</option>
+                                    <option>C3</option>
+                                </select>
+                            </td>
+                            <td>
+                                <select>
+                                    <option>Low</option>
+                                    <option>Medium</option>
+                                    <option>High</option>
+                                    <option>Severe</option>
+                                </select>
+                            </td>
+                            <td><input type="text" name="" /></td>
+                        </tr>
+                    </table>
+                    <br>
+                    <button class="btn" ng-click="addFields('cam-setup', 'separation-distances')">Add More Fields</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-5 col-sm-12">
+            <div class="box box-primary">
+                <div class="box-header with-border">
+                    <h3 class="box-title">Building Details</h3>
+                </div>
+
+                <div class="box-body">
+                    <table class="building-details" border="0">
+                        <tr>
+                            <th>Building Designation</th>
+                            <th style="width: 55%">Building Description</th>
+                            <th>Building Type</th>
+                        </tr>
+                        <tr class="input-fields">
+                            <td class="input-header"><input class="ignore-field" type="text" name="" /></td>
+                            <td><input type="text" name="" /></td>
+                            <td>
+                                <select>
+                                    <option>B1</option>
+                                    <option>B2</option>
+                                    <option>B3</option>
+                                    <option>B4</option>
+                                </select>
+                            </td>
+                        </tr>
+                    </table>
+                    <br>
+                    <button class="btn" ng-click="addFields('building-details')">Add More Fields</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-8 col-md-offset-2 col-sm-12">
+            <div class="box box-primary">
+                <div class="box-header with-border">
+                    <h3 class="box-title">Separation Distances Between Buildings and Process Units</h3>
+                </div>
+
+                <div class="box-body">
+                    <table class="separation-distances" border="0">
+                        <tr>
+                            <th>Area Code/Name</th>
+                            <th class="input-header"><input type="text" name="" class="ignore-field" /></th>
+                        </tr>
+                        <tr class="input-fields">
+                            <td class="separate-field"><input type="text" name="" class="ignore-field"/></td>
+                            <td class="input-row"><input type="text" name="" /></td>
+                        </tr>
+                    </table>
+                    <br>
+                    <button class="btn btn-primary pull-right" ng-click="doCalculation()">Run model</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</section>
+
+<!-- Modal -->
+<div id="myModal" class="modal fade" data-backdrop="false" role="dialog">
+    <div class="modal-dialog">
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">Result for: Explosion Exceedance Model</h4>
+            </div>
+            <div class="modal-body">
+                <h3 ng-show="!excelLoaded" class="loading">Working...</h3>
+                <h4 style="color:green;" ng-show="excelLoaded">Succeed</h4>
+                <a ng-show="excelLoaded" href="{{url}}">Check it now </a>
+                <span ng-show="excelLoaded">or Check your Desktop for "Exceedance Results" file</span>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal -->
+<div id="helpModal" class="modal fade" data-backdrop="false" role="dialog">
+    <div class="modal-dialog modal-lg">
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">Congestion Level Examples</h4>
+            </div>
+            <div class="modal-body">
+                <img src="data/congestion-level.PNG" style="max-width: 100%;" />
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-danger" ng-show="chartLoaded" ng-click="addToReport()">Add to report</button>
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>

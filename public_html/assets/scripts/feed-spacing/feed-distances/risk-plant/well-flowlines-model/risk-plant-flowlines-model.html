@@ -1,0 +1,152 @@
+<section class="content-header">
+    <h1>Well<small>Flowlines Model</small></h1>
+    <ol class="breadcrumb">
+        <li><a href="#">Feed Spacing Considerations</a></li>
+        <li><a href="#">Risk to Plant Personnel</a></li>
+        <li class="active">Well Flowlines Model</li>
+    </ol>
+</section>
+
+<section class="content" plant-flow-lines-model>
+    <form class="row">
+        <div class="col-md-12" ng-if="!plantGasLinesModel">
+            <div class="callout callout-danger">
+                <h4>Important!</h4>
+                <p>You need to run <a href="#/feed-spacing/determination-distances/risk-plant/gas-lines-model">Plant Gas Line Model</a> first!</p>
+            </div>
+        </div>
+
+        <div class="col-md-6">
+            <div class="box box-primary">
+                <div class="box-header with-border">
+                    <h3 class="box-title">Flowline Details</h3>
+                </div>
+
+                <div class="box-body">
+                    <div class="form-group">
+                        <label>Case Name</label>
+                        <input type="text" name="data-1" class="form-control" value="Flow line test (non public test)">
+                    </div>
+                    <div class="form-group">
+                        <label>Diameter</label>
+                        <input type="text" name="data-2" class="form-control" value="304.8">
+                        <span class="unit">mm</span>
+                    </div>
+                    <div class="form-group">
+                        <label>Operating pressure</label>
+                        <input type="text" name="data-3" class="form-control" value="100">
+                        <span class="unit">Bar</span>
+                    </div>
+                    <div class="form-group">
+                        <label>Length</label>
+                        <input type="text" name="data-5" class="form-control" value="5000">
+                        <span class="unit">m</span>
+                    </div>
+                    <div class="form-group">
+                        <label>Material</label>
+                        <input type="text" name="data-7" class="form-control" value="Steel">
+                    </div>
+                    <div class="form-group">
+                        <label>Wall thickness</label>
+                        <input type="text" name="data-4" class="form-control" value="12">
+                        <span class="unit">mm</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-6">
+            <div class="box box-primary">
+                <div class="box-header with-border">
+                    <h3 class="box-title">Additional Details</h3>
+                </div>
+
+                <div class="box-body">
+                    <div class="form-group">
+                        <label>Heat of Combustion</label>
+                        <input type="text" name="data-6" class="form-control" value="50400">
+                        <span class="unit">kJ/kg</span>
+                    </div>
+                    <div class="form-group">
+                        <label>50 mm hole (refer to more info field below)</label>
+                        <input type="text" class="form-control hole-50" value="50">
+                        <span class="unit">kg/s</span>
+                    </div>
+                    <div class="form-group">
+                        <label>5 mm hole (refer to more info field below)</label>
+                        <input type="text" class="form-control hole-5" value="6">
+                        <span class="unit">kg/s</span>
+                    </div>
+                    <div class="form-group">
+                        <label>Reaction time</label>
+                        <input type="text" name="data-8" class="form-control" value="2">
+                        <span class="unit">s</span>
+                    </div>
+                    <div class="form-group">
+                        <label>Escape Velocity</label>
+                        <input type="text" name="data-9" class="form-control" value="2">
+                        <span class="unit">m/s</span>
+                    </div>
+                    <div class="form-group">
+                        <label>Factor from Step 3 (refer to more info field below)</label>
+                        <input type="text" class="form-control step-5-factor" value="2">
+                        <a style="cursor: pointer;" data-toggle="modal" data-target="#moreInfoModal"><b>more info...</b></a>
+                    </div>
+                    <div class="form-group" ng-show="plantGasLinesModel">
+                        <br>
+                        <button class="btn btn-primary" ng-click="doCalculation()">Run the model</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </form>
+</section>
+
+<!-- Modal -->
+<div id="myModal" class="modal fade" data-backdrop="false" role="dialog">
+    <div class="modal-dialog">
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">Result for: Well Flowlines Model</h4>
+            </div>
+            <div class="modal-body">
+                <h3 ng-show="!excelLoaded" class="loading">Working...</h3>
+                <h4 style="color:green;" ng-show="excelLoaded">Succeed</h4>
+                <span ng-show="excelLoaded">Check your Desktop for "{{ name }}" file</span>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal -->
+<div id="moreInfoModal" class="modal fade" data-backdrop="false" role="dialog">
+    <div class="modal-dialog modal-lg">
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">More Info for Well flowlines Model</h4>
+            </div>
+            <div class="modal-body">
+                <ol>
+                    <li>Use Shell FRED to calculate release rate for Natural Gas using the same pressure and same temperature as used in Gas Lines.</li>
+                    <li>Using Shell FRED calculate 1” (one inch) hole size releases rate for the actual well fluid composition</li>
+                    <li>Divide the values obtained from the release rate from well fluid with the release rate for the natural gas. The result should be a factor that is greater than 1. Input this factor into the appropriate field in the Well Flowlines Model</li>
+                    <li>Using Shell FRED calculate release rate for well fluid composition for 5 mm and 50 mm holes for well fluid and input in the appropriate fields in Well Flowlines Model</li>
+                    <li>Check input sheet and ensure data is correct.</li>
+                    <li>Run the model.</li>
+                </ol>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-danger" ng-show="chartLoaded" ng-click="addToReport()">Add to report</button>
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>

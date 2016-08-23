@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html ng-app="fieldSpacingTool">
+    <head>
+        <title>Kuwait Oil Company</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" type="text/css" href="assets/styles/app.min.css">
+    </head>
+    <body class="hold-transition skin-blue">
+        <div class="wrapper">
+            <aside class="main-sidebar">
+                <section class="sidebar">
+                    <ul class="sidebar-menu">
+                        <li class="header">General</li>
+                        <li><a href="#/">Homepage</a></li>
+                        <li><a href="#/general-considerations">General Considerations</a></li>
+
+                        <li class="header">Concept Selection (PGS 2.1) Field Spacing</li>
+                        <li><a href="#/concept-selection/concept-general">Concept General Considerations</a></li>
+                        <li><a href="#/concept-selection/concept-siting">Concept Siting Considerations</a></li>
+                        <li><a href="#/concept-selection/concept-layout">Concept Layout & Segregation Considerations</a></li>
+                        <li><a href="#/concept-selection/concept-equipment">Concept Equipment Spacing Considerations</a></li>
+                        <li><a href="#/concept-selection/concept-bra">Concept BRA Considerations</a></li>
+                        <li class="treeview"><a href="#"><span>Determination of Concept Distances</span></a>
+                            <ul class="treeview-menu">
+                                <li><a href="#/concept-selection/concept-distance/wellhead-facilities">Initial Separation Distances for Wells in Normal Operation (Flammables only)</a></li>
+                                <li><a href="#/concept-selection/concept-distance/flammable-distances">Flammable Wells Distances</a></li>
+                                <li><a href="#/concept-selection/concept-distance/flowlines">Flammable Flowlines, Gathering & Pipeline System Distances</a></li>
+                                <li><a href="#/concept-selection/concept-distance/typical-flammable-distances">Typical Flammable Processing Facility Distances</a></li>
+                                <li><a href="#/concept-selection/concept-distance/unmanned-facilities">Flammable Unmanned Facility Distances</a></li>
+                                <li><a href="#/concept-selection/concept-distance/flammable-manned-distances">Flammable Manned Facility Distances</a></li>
+                                <li><a href="#/concept-selection/concept-distance/tanks-distances">Tanks Distances</a></li>
+                                <li><a href="#/concept-selection/concept-distance/h2s-facilities">H2S Facilities</a></li>
+                                <li><a href="#/concept-selection/concept-distance/blowouts/50">Sour Well Blowouts (50 kg/s)</a></li>
+                                <li><a href="#/concept-selection/concept-distance/blowouts/100">Sour Well Blowouts (100 kg/s)</a></li>
+                            </ul>
+
+                        <li class="header">FEED (PGS 3.1) Field Spacing</li>
+                        <li><a href="#/feed-spacing/feed-general-considerations">FEED General Considerations</a></li>
+                        <li><a href="#/feed-spacing/siting-considerations">FEED Siting Considerations</a></li>
+                        <li><a href="#/feed-spacing/layout-considerations">FEED Layout & Segregation Considerations</a></li>
+                        <li><a href="#/feed-spacing/equipment-considerations">FEED Equipment Spacing Considerations</a></li>
+                        <li><a href="#/feed-spacing/bra-considerations">FEED BRA Considerations</a></li>
+                        <li class="treeview"><a href="#"><span>Determination of FEED Distances</span></a>
+                            <ul class="treeview-menu">
+                                <li><a href="#/feed-spacing/determination-distances/run-explosion-model">Run Explosion Exceedance Model</a></li>
+                                <li class="treeview treeview-submenu">
+                                    <a href="#"><span>Risk to Plant Personnel</span></a>
+                                    <ul class="treeview-menu">
+                                        <li><a href="#/feed-spacing/determination-distances/risk-plant/flowlines-model">Run Well Flowlines Model</a></li>
+                                        <li><a href="#/feed-spacing/determination-distances/risk-plant/product-lines-model">Run Liquid Product Lines Model</a></li>
+                                        <li><a href="#/feed-spacing/determination-distances/risk-plant/gas-lines-model">Run Gas Lines Model</a></li>
+                                    </ul>
+                                </li>
+                                <li class="treeview">
+                                    <a href="#"><span>Risk to Public</span></a>
+                                    <ul class="treeview-menu">
+                                        <li><a href="#/feed-spacing/determination-distances/risk-public/flowlines-model">Run Well Flowlines Model</a></li>
+                                        <li><a href="#/feed-spacing/determination-distances/risk-public/product-lines-model">Run Liquid Product Lines Model</a></li>
+                                        <li><a href="#/feed-spacing/determination-distances/risk-public/gas-lines-model">Run Gas Lines Model</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+
+                        <li class="header">Detailed Design (PGS 4.1) Field Spacing</li>
+                        <li><a href="#/other/detailed-design">Detailed Design Field Spacing Considerations</a></li>
+                        <li><a href="#/other/detailed-design-bra">Detailed Design BRA Consideration</a></li>
+                    </ul>
+                </section>
+            </aside>
+
+            <div class="content-wrapper" ng-view></div>
+
+            <footer class="main-footer">
+                <div class="pull-right hidden-xs">
+                    <b>Developed by </b><a href="http://theninepixels.com" target="_blank">Nine Pixels Digital Solutions</a>, on behalf <a href="http://www.gexcon.com/" target="_blank">Vanguard Solutions (Middle East)</a>
+                </div>
+                <strong>Copyright &copy; 2016 <a href="http://kockw.com" target="_blank">Kuwait Oil Company (KSC).</a></strong> All rights reserved.
+            </footer>
+        </div>
+
+        <script type="text/javascript" src="assets/scripts/vendor.min.js"></script>
+    </body>
+</html>

@@ -1,0 +1,62 @@
+.form-group {
+    position: relative;
+
+    .unit {
+        position: absolute;
+        top: 31px;
+        right: 6px;
+
+        font-weight: bold;
+    }
+}
+
+.exceedence-model {
+    table {
+        width: 100%;
+        border-collapse: collapse;
+
+        th {
+            padding: 3px;
+            white-space: nowrap;
+        }
+
+        .input-header {
+            padding: 0;
+            border: 1px solid lightgrey;
+            input {
+                text-align: center;
+                background-color: yellow;
+            }
+        }
+
+        td {
+            border: 1px solid lightgrey;
+            &.separate-field {
+                input {
+                    background-color: lightgreen;
+                }
+            }
+        }
+
+        input, select {
+            width: 100%;
+            padding: 5px 10px;
+            border: 0;
+        }
+    }
+}
+
+#print-report {
+    position: fixed;
+
+    width: 65px;
+    height: 65px;
+    line-height: 13px;
+    border-radius: 65px;
+
+    white-space: normal;
+
+    right: 30px;
+    bottom: 60px;
+    z-index: 9999;
+}

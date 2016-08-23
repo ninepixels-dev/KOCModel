@@ -1,0 +1,115 @@
+<section class="content-header">
+    <h1>Liquid<small>Product Lines Model (Public)</small></h1>
+    <ol class="breadcrumb">
+        <li><a href="#">Feed Spacing Considerations</a></li>
+        <li><a href="#">Risk to Public Personnel</a></li>
+        <li class="active">Liquid Product Lines Model</li>
+    </ol>
+</section>
+
+<section class="content" public-product-lines-model>
+    <form class="row">
+
+        <div class="col-md-6">
+            <div class="box box-primary">
+                <div class="box-header with-border">
+                    <h3 class="box-title">Flowline Details</h3>
+                </div>
+
+                <div class="box-body">
+                    <div class="form-group">
+                        <label>Name</label>
+                        <input type="text" name="data-1" class="form-control" value="Liquid export line test">
+                    </div>
+                    <div class="form-group">
+                        <label>Diameter</label>
+                        <input type="text" name="data-2" class="form-control" value="600">
+                        <span class="unit">mm</span>
+                    </div>
+                    <div class="form-group">
+                        <label>Operating pressure</label>
+                        <input type="text" name="data-3" class="form-control" value="200">
+                        <span class="unit">Bar</span>
+                    </div>
+                    <div class="form-group">
+                        <label>Wall thickness</label>
+                        <input type="text" name="data-4" class="form-control" value="12">
+                        <span class="unit">mm</span>
+                    </div>
+                    <div class="form-group">
+                        <label>Pumping rate</label>
+                        <input type="text" name="data-11" class="form-control" value="200">
+                        <span class="unit">kg/s</span>
+                    </div>
+                    <div class="form-group">
+                        <label>Length</label>
+                        <input type="text" name="data-5" class="form-control" value="5000">
+                        <span class="unit">m</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-6">
+            <div class="box box-primary">
+                <div class="box-header with-border">
+                    <h3 class="box-title">Additional Details</h3>
+                </div>
+
+                <div class="box-body">
+                    <div class="form-group">
+                        <label>Density at operating Temperature</label>
+                        <input type="text" name="data-6" class="form-control" value="695">
+                        <span class="unit">kg/m3</span>
+                    </div>
+                    <div class="form-group">
+                        <label>Reaction time</label>
+                        <input type="text" name="data-7" class="form-control" value="2">
+                        <span class="unit">s</span>
+                    </div>
+                    <div class="form-group">
+                        <label>Heat of Combustion</label>
+                        <input type="text" name="data-9" class="form-control" value="50000">
+                        <span class="unit">kJ/kg</span>
+                    </div>
+                    <div class="form-group">
+                        <label>Escape velocity</label>
+                        <input type="text" name="data-8" class="form-control" value="2">
+                        <span class="unit">m/s</span>
+                    </div>
+                    <div class="form-group">
+                        <label>Burning rate</label>
+                        <input type="text" name="data-10" class="form-control" value="0.05">
+                        <span class="unit">kg/m2/s</span>
+                    </div>
+                    <br>
+                    <div class="form-group">
+                        <button class="btn btn-primary" ng-click="doCalculation()">Run the model</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </form>
+</section>
+
+<!-- Modal -->
+<div id="myModal" class="modal fade" data-backdrop="false" role="dialog">
+    <div class="modal-dialog">
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">Result for: Liquid Product Lines Model</h4>
+            </div>
+            <div class="modal-body">
+                <h3 ng-show="!excelLoaded" class="loading">Working...</h3>
+                <h4 style="color:green;" ng-show="excelLoaded">Succeed</h4>
+                <span ng-show="excelLoaded">Check your Desktop for "{{ name }}" file</span>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>

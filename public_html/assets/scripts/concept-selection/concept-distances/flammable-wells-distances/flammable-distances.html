@@ -1,0 +1,74 @@
+<section class="content-header">
+    <h1>Flammable Wells Distances (Consequence Distances for Blow-outs (in metres))</h1>
+    <ol class="breadcrumb">
+        <li><a href="#"><i class="fa fa-dashboard"></i>Concept Selection</a></li>
+        <li class="active">Flammable Wells Distances</li>
+    </ol>
+</section>
+
+<section class="content" flammable-distances>
+
+    <div class="row">
+        <div class="col-md-6">
+            <div class="box box-primary">
+                <div class="box-header with-border">
+                    <h3 class="box-title">Absolutely Open Flow (AOF)</h3>
+                </div>
+
+                <div class="box-body">
+                    <select id="selectController1" class="form-control input-lg">
+                        <option></option>
+                    </select>
+                </div>
+
+                <div class="box-footer"></div>
+            </div>
+        </div>
+
+        <div class="col-md-6">
+            <div class="box box-primary">
+                <div class="box-header with-border">
+                    <h3 class="box-title">Exposure Level (kW/m2)</h3>
+                </div>
+
+                <div class="box-body">
+                    <select id="selectController2" class="form-control input-lg">
+                        <option></option>
+                    </select>
+                </div>
+
+                <div class="box-footer"></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-12">
+            <div class="info-box">
+                <span class="info-box-icon bg-blue"><i class="glyphicon glyphicon-info-sign"></i></span>
+
+                <div class="info-box-content">
+                    <h4>Recommended Minimum Spacing (m)</h4>
+                    <span id="result" class="info-box-number"></span>
+                </div>
+            </div>
+        </div>
+        <table class="hidden-content-table flammable-distances-table">
+            <tr>
+                <th data="32 kW/m2">32 kW/m2</th>
+                <th data="10 kW/m2">10 kW/m2</th>
+                <th data="5 kW/m2">5 kW/m2</th>
+            </tr>
+            <tr data="50 kg/s AOF">
+                <td>55</td>
+                <td>70</td>
+                <td>80</td>
+            </tr>
+            <tr data="100 kg/s AOF">
+                <td>75</td>
+                <td>95</td>
+                <td>110</td>
+            </tr>
+        </table>
+    </div>
+</section>
