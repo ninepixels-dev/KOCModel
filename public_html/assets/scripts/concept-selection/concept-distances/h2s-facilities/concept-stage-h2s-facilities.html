@@ -45,14 +45,23 @@
                             <div class="blue-line-legend line-legend"></div> 30 ppm
                         </div>
                         <form class="molfraction">
-                            <span class="molfraction-label">Molfraction:</span>
+                            <span class="molfraction-label">Molfraction H2S * √ (P) (bar):</span>
+                            <br>
                             <input type="text" name="h2s-value" placeholder="H2S" required/>
                             * √
                             <input type="text" name="p-value" placeholder="P" required/>
+                            (bar)
                             <button id="calculation-btn">Calculate</button>
                             <br>
-
                             <span class="result-label">Result:</span> <span class="result"></span>
+                            <br>
+                            <div class="additional-results" ng-show="additional">
+                                <span class="result-label--smaller">650 ppm:</span> <span class="result--650"></span>
+                                <span class="result-label--smaller">, 300 ppm:</span> <span class="result--300"></span>
+                                <br>
+                                <span class="result-label--smaller">100 ppm:</span> <span class="result--100"></span>
+                                <span class="result-label--smaller">, 30 ppm:</span> <span class="result--30"></span>
+                            </div>
                         </form>
                     </div>
                 </div>

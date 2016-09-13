@@ -116,8 +116,10 @@ line:hover, line.active {
 .blue-line-legend {background: blue;}
 
 .molfraction {
+    position: relative;
     width: 963px;
     text-align: center;
+    z-index: 999;
 }
 
 .molfraction > * {
@@ -199,11 +201,51 @@ line:hover, line.active {
     }
 }
 
-.result, .result-label {
+.result, .result-label, .result-label--smaller {
     margin-top: 15px;
     font-size: 32px;
 }
 
+.result {
+    &--650 {
+        font-size: 28px;
+        color: red;
+    }
+    &--300 {
+        font-size: 28px;
+        color: #B5AD43;
+    }
+    &--100 {
+        font-size: 28px;
+        color: green;
+    }
+    &--30 {
+        font-size: 28px;
+        color: blue;
+    }
+    &--blue {
+        color: blue;
+    }
+    &--red {
+        color: red;
+    }
+    &--green {
+        color: #B5AD43;
+    }
+    &--purple {
+        color: purple;
+    }
+}
+
 .result-label {
     margin-right: 5px;
+    &--smaller {
+        font-size: 28px;
+        margin-top: 0;
+    }
+}
+
+.blowouts-form {
+    text-align: center;
+    padding: 20px 0;
 }
