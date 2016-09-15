@@ -17,18 +17,22 @@
                 <div class="box-body">
                     <i>The graph illustrates the recommended spacing (m) for the various worker groups that might be affected by H2S releases from the facilities.<br>
                         Refer to the Guidelines, Sections 5.5.2</i><br><br>
-                    <img src="data/blowouts-100.JPG" />
+                    <img src="data/blowouts-100.jpg" />
 
                     <form blowouts100 class="blowouts-form">
                         H2S Value: <input type="text" name="h2s-value" placeholder="H2S" style="max-width: 50px;" required/>
+                        %
                         <button id="calculation-btn">Calculate</button>
 
                         <div class="additional-results" style="padding: 20px 0;" ng-show="additional">
+                            <div class="underlined-label">Calculated distances (m)</div>
                             <span class="result-label--smaller">650 ppm:</span> <span class="result result--650 result--blue"></span>
-                            <span class="result-label--smaller">, 300 ppm:</span> <span class="result result--300 result--red"></span>
+                            <br>
+                            <span class="result-label--smaller">300 ppm:</span> <span class="result result--300 result--red"></span>
                             <br>
                             <span class="result-label--smaller">100 ppm:</span> <span class="result result--100 result--green"></span>
-                            <span class="result-label--smaller">, 30 ppm:</span> <span class="result result--30 result--purple"></span>
+                            <br>
+                            <span class="result-label--smaller">30 ppm:</span> <span class="result result--30 result--purple"></span>
                         </div>
                     </form>
                 </div>
