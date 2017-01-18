@@ -76,6 +76,14 @@ module.exports = function (grunt) {
                 files: ['public_html/*', 'public_html/data/*', 'public_html/workbooks/*', 'public_html/assets/**/*.html'],
                 tasks: 'copy'
             }
+        },
+        'http-server': {
+            server: {
+                host: 'localhost',
+                port: 3000,
+                root: 'production',
+                runInBackground: true
+            }
         }
     });
 
@@ -85,6 +93,16 @@ module.exports = function (grunt) {
         'cssmin',
         'uglify',
         'copy',
+        'watch'
+    ]);
+
+    grunt.registerTask('server', [
+        'clean',
+        'less',
+        'cssmin',
+        'uglify',
+        'copy',
+        'http-server',
         'watch'
     ]);
 
