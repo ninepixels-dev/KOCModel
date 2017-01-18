@@ -20,7 +20,13 @@ function publicGasLinesModel(closeExcel, $rootScope) {
                 scope.excelLoaded = false;
                 $("#myModal").modal();
                 $("#myModal").on('shown.bs.modal', function () {
-                    var Excel = new ActiveXObject("Excel.Application");
+                    var Excel;
+
+                    try {
+                        Excel = GetObject("", "Excel.Application");
+                    } catch (e) {
+                        Excel = new ActiveXObject("Excel.Application");
+                    }
 
                     Excel.Visible = false;
                     Excel.DisplayAlerts = false;

@@ -150,18 +150,15 @@ function googleSheets($rootScope) {
 
 }
 
-closeExcel.$inject = [];
-function closeExcel() {
-    var idTmr = "";
+closeExcel.$inject = ['$timeout'];
+function closeExcel($timeout) {
     this.close = function (excel) {
         excel.Quit();
-        idTmr = window.setInterval(Cleanup, 1);
+        $timeout(function () {
+            CollectGarbage();
+            console.warn('Cleanup called');
+        }, 2000);
     };
-
-    function Cleanup() {
-        window.clearInterval(idTmr);
-        CollectGarbage();
-    }
 }
 
 angular.module('fieldSpacingTool.services', [])
