@@ -142,7 +142,7 @@ function googleSheets($rootScope) {
                 console.log(chartInputData);
                 chart.draw(data, options);
             }
-            
+
             $rootScope.$broadcast('chartImage', chart.getImageURI());
         }
 
@@ -150,5 +150,20 @@ function googleSheets($rootScope) {
 
 }
 
+closeExcel.$inject = [];
+function closeExcel() {
+    var idTmr = "";
+    this.close = function (excel) {
+        excel.Quit();
+        idTmr = window.setInterval(Cleanup, 1);
+    };
+
+    function Cleanup() {
+        window.clearInterval(idTmr);
+        CollectGarbage();
+    }
+}
+
 angular.module('fieldSpacingTool.services', [])
-        .service('googleSheets', googleSheets);
+        .service('googleSheets', googleSheets)
+        .service('closeExcel', closeExcel);

@@ -1,7 +1,7 @@
 'use strict';
 
-publicFlowLinesModel.$inject = ['$rootScope'];
-function publicFlowLinesModel($rootScope) {
+publicFlowLinesModel.$inject = ['closeExcel'];
+function publicFlowLinesModel(closeExcel) {
     return {
         link: function (scope, elem, attr, ctrl) {
             scope.doCalculation = function () {
@@ -60,7 +60,7 @@ function publicFlowLinesModel($rootScope) {
                     var gasLinesTransect = Excel_Templates.Sheets.Add();
                     gasLinesTransect.name = "Well_Lines_Transect";
                     gasLinesTransect.Pictures.Paste;
-                    
+
                     scope.name = $('input[name="data-1"]').val() + '.xlsx';
 
                     // Expand environment
@@ -77,7 +77,15 @@ function publicFlowLinesModel($rootScope) {
                     Excel_Templates.Close();
                     Excel_File.Close();
 
-                    Excel.Quit();
+                    Excel = closeExcel.close(Excel);
+                    Excel = null;
+
+                    scope.closeModal = function () {
+                        if (Excel) {
+                            Excel = closeExcel.close(Excel);
+                        }
+                        $('#myModal').modal('hide');
+                    };
                 });
             };
         }

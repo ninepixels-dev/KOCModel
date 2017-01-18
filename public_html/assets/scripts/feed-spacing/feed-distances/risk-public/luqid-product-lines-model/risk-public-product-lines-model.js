@@ -1,7 +1,7 @@
 'use strict';
 
-publicProductLinesModel.$inject = ['googleSheets'];
-function publicProductLinesModel(googleSheets) {
+publicProductLinesModel.$inject = ['closeExcel'];
+function publicProductLinesModel(closeExcel) {
     return {
         link: function (scope, elem, attr, ctrl) {
             scope.doCalculation = function () {
@@ -64,7 +64,15 @@ function publicProductLinesModel(googleSheets) {
                     Excel_Templates.Close();
                     Excel_File.Close();
 
-                    Excel.Quit();
+                    Excel = closeExcel.close(Excel);
+                    Excel = null;
+
+                    scope.closeModal = function () {
+                        if (Excel) {
+                            Excel = closeExcel.close(Excel);
+                        }
+                        $('#myModal').modal('hide');
+                    };
                 });
             };
         }

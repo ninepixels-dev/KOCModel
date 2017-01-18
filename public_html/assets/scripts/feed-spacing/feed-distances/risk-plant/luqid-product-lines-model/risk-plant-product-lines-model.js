@@ -1,7 +1,7 @@
 'use strict';
 
-plantProductLinesModel.$inject = ['googleSheets'];
-function plantProductLinesModel(googleSheets) {
+plantProductLinesModel.$inject = ['closeExcel'];
+function plantProductLinesModel(closeExcel) {
     return {
         link: function (scope, elem, attr, ctrl) {
             scope.doCalculation = function () {
@@ -22,7 +22,7 @@ function plantProductLinesModel(googleSheets) {
                 $("#myModal").on('shown.bs.modal', function () {
                     var Excel = new ActiveXObject("Excel.Application");
 
-                    Excel.Visible = true;
+                    Excel.Visible = false;
                     Excel.DisplayAlerts = false;
 
                     var Excel_File = Excel.Workbooks.Open("http://kuwait.ninepixels.rs/workbooks/liquid_product_pipelines.xlsx");
@@ -65,7 +65,15 @@ function plantProductLinesModel(googleSheets) {
                     Excel_Templates.Close();
                     Excel_File.Close();
 
-                    Excel.Quit();
+                    Excel = closeExcel.close(Excel);
+                    Excel = null;
+
+                    scope.closeModal = function () {
+                        if (Excel) {
+                            Excel = closeExcel.close(Excel);
+                        }
+                        $('#myModal').modal('hide');
+                    };
                 });
             };
         }

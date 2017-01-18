@@ -1,7 +1,7 @@
 'use strict';
 
-explosionModel.$inject = [];
-function explosionModel() {
+explosionModel.$inject = ['closeExcel'];
+function explosionModel(closeExcel) {
     return {
         link: function (scope, elem, attr, ctrl) {
             scope.addFields = function (table, cloneTable) {
@@ -120,7 +120,15 @@ function explosionModel() {
                     Excel_Templates.Close();
                     Excel_File.Close();
 
-                    Excel.Quit();
+                    Excel = closeExcel.close(Excel);
+                    Excel = null;
+
+                    scope.closeModal = function () {
+                        if (Excel) {
+                            Excel = closeExcel.close(Excel);
+                        }
+                        $('#myModal').modal('hide');
+                    };
                 });
             };
         }

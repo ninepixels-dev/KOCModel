@@ -1,7 +1,7 @@
 'use strict';
 
-plantFlowLinesModel.$inject = ['googleSheets', '$rootScope'];
-function plantFlowLinesModel(googleSheets, $rootScope) {
+plantFlowLinesModel.$inject = ['closeExcel', '$rootScope'];
+function plantFlowLinesModel(closeExcel, $rootScope) {
     return {
         link: function (scope, elem, attr, ctrl) {
             scope.doCalculation = function () {
@@ -74,7 +74,15 @@ function plantFlowLinesModel(googleSheets, $rootScope) {
                     Excel_Templates.Close();
                     Excel_File.Close();
 
-                    Excel.Quit();
+                    Excel = closeExcel.close(Excel);
+                    Excel = null;
+
+                    scope.closeModal = function () {
+                        if (Excel) {
+                            Excel = closeExcel.close(Excel);
+                        }
+                        $('#myModal').modal('hide');
+                    };
                 });
             };
         }

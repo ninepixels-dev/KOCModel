@@ -104,12 +104,12 @@
             <div class="modal-body">
                 <h3 ng-show="!excelLoaded" class="loading">Working...</h3>
                 <h4 style="color:green;" ng-show="excelLoaded">Succeed</h4>
-                <span ng-show="excelLoaded">Check your Desktop for "{{ name }}" file</span>
+                <span ng-show="excelLoaded">Check your Desktop for "{{ name}}" file</span>
                 <br>
                 <a href="#/feed-spacing/determination-distances/risk-public/flowlines-model" ng-show="excelLoaded">Run Well Flowlines Model</a>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-default" ng-click="closeModal()">Close</button>
             </div>
         </div>
     </div>

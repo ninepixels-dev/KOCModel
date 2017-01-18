@@ -1,7 +1,7 @@
 'use strict';
 
-publicGasLinesModel.$inject = ['googleSheets', '$rootScope'];
-function publicGasLinesModel(googleSheets, $rootScope) {
+publicGasLinesModel.$inject = ['closeExcel', '$rootScope'];
+function publicGasLinesModel(closeExcel, $rootScope) {
     return {
         link: function (scope, elem, attr, ctrl) {
             scope.doCalculation = function () {
@@ -76,7 +76,15 @@ function publicGasLinesModel(googleSheets, $rootScope) {
                     Excel_Templates.Close();
                     Excel_File.Close();
 
-                    Excel.Quit();
+                    Excel = closeExcel.close(Excel);
+                    Excel = null;
+
+                    scope.closeModal = function () {
+                        if (Excel) {
+                            Excel = closeExcel.close(Excel);
+                        }
+                        $('#myModal').modal('hide');
+                    };
                 });
             };
         }
